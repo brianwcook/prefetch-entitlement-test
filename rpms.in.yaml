@@ -4,7 +4,8 @@ contentOrigin:
     # Either local path or url pointing to .repo file
     #- ./ubi9-redhat.repo
     #- ./ubi9-redhat-src.repo
-     - ./ubi.repo
+     - ./ubi9-redhat.repo
+     - ./ubi9-redhat-src.repo
 
 packages:
   # list of rpm names to resolve
