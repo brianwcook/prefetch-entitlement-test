@@ -232,14 +232,22 @@ spec:
       runAfter:
       - prefetch-dependencies
       taskRef:
+        # params:
+        # - name: name
+        #   value: buildah-oci-ta
+        # - name: bundle
+        #   value: quay.io/konflux-ci/tekton-catalog/task-buildah-oci-ta:0.2@sha256:937f465189482f3279b9491161fff7720d4c443f27e6d9febbf2344268383011
+        # - name: kind
+        #   value: task
+        # resolver: bundles
+        resolver: git
         params:
-        - name: name
-          value: buildah-oci-ta
-        - name: bundle
-          value: quay.io/konflux-ci/tekton-catalog/task-buildah-oci-ta:0.2@sha256:937f465189482f3279b9491161fff7720d4c443f27e6d9febbf2344268383011
-        - name: kind
-          value: task
-        resolver: bundles
+        - name: url
+          value: https://github.com/brianwcook/build-definitions.git
+        - name: revision
+          value: disable-subs-hermetic
+        - name: pathInRepo
+          value: task/buildah-oci-ta/0.2/buildah-oci-ta.yaml
       when:
       - input: $(tasks.init.results.build)
         operator: in
