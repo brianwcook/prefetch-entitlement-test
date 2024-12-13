@@ -26,12 +26,10 @@ spec:
     value: quay.io/redhat-user-workloads/brianwcook-tenant/prefetch-entitlement-test:on-pr-{{revision}}
   - name: image-expires-after
     value: 5d
-  - name: dockerfile
-    value: docker/Dockerfile
   - name: hermetic
     value: "true"
   - name: prefetch-input
-    value: "pip"  
+    value: "rpm"  
 
   pipelineSpec:
     description: |
